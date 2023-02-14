@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AuthenticationApp.Valid" xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="AuthenticationApp.View.SignupPage"
+             BackgroundImageSource="back1.png">
+
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="1" Margin="5,5,5,5" BorderColor="Transparent" HasShadow="True"  CornerRadius="50" HeightRequest="100">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="10,20,10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackLayout >
+                        <Label Grid.Row="0"  Text="SignUp" FontSize="20" FontAttributes="Bold" TextColor="#1C375C" HorizontalOptions="CenterAndExpand"></Label>
+                    <Label Grid.Row="1"  Margin="0,2,0,0" Text="Create a new account" TextColor="#1C375C"  HorizontalOptions="CenterAndExpand"></Label>
+                  
+                        <controls:CircleImage Grid.Row="2" HeightRequest="120"   WidthRequest="120"   x:Name="selectedImage" Source="images12.png" Aspect="AspectFit">
+                        </controls:CircleImage>
+                        <Button Grid.Row="2" Text="Add Photo" CornerRadius="14" Clicked="Button_Clicked_1" Margin="0,0,0,-10" Font="12" HeightRequest="35" BackgroundColor="White" TextColor="Red" HorizontalOptions="Center" VerticalOptions="End"></Button>
+
+                        <Entry Grid.Row="4"  x:Name="uname" Placeholder="Username" Margin="0,2,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <Entry Grid.Row="5" x:Name="fname" Placeholder="Firstname" Margin="0,2,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <Entry Grid.Row="6"  x:Name="lname" Placeholder="Lastname" Margin="0,2,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <Entry Grid.Row="7" x:Name="pno" Placeholder="Phone Number" Margin="0,2,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Entry.Behaviors>
+                            <local:MaxLengthValidatorBehavior  MaxLength="10"/>
+                            <local:NumberValidationBehavior/>
+                        </Entry.Behaviors>
+                    </Entry>
+
+                    <Entry Grid.Row="8"  x:Name="email" Placeholder="Email" Margin="0,2,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Entry.Behaviors>
+                            <local:EmailValidatorBehavior x:Name="emailValidator" />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Entry Grid.Row="9"   x:Name="password" Placeholder="Password" Margin="0,2,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Entry.Behaviors>
+                            <local:PasswordValidationBehavior />
+                        </Entry.Behaviors>
+                    </Entry>
+
+                    <Entry Grid.Row="10" x:Name="cpassword" Placeholder="ConfirmPassword"  Margin="0,2,0,0" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Entry.Behaviors>
+                            <local:PasswordValidationBehavior />
+                            <local:CompareValidationBehavior BindingContext="{x:Reference password}" Text="{Binding Text}"/>
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Button Grid.Row="11" Text="SignUp" Clicked="Button_Clicked" BackgroundColor="#0277C8" CornerRadius="20"></Button>
+
+
+                    <Label Grid.Row="12"  HorizontalOptions="CenterAndExpand">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Do you have an account? " TextColor="Gray"></Span>
+                                <Span Text="Sign in here" TextColor="Blue" FontAttributes="Bold" TextDecorations="Underline"></Span>
+
+                            </FormattedString>
+
+                        </Label.FormattedText>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Label.GestureRecognizers>
+
+                    </Label>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+
+
+</ContentPage>

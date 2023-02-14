@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AuthenticationApp.Valid" 
+             x:Class="AuthenticationApp.View.LoginPage"
+             BackgroundColor="AntiqueWhite"
+             BackgroundImageSource="back1.png">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Margin="0,30" Source="Logo2r.png" Aspect="AspectFit" HeightRequest="160" WidthRequest="60"></Image>
+            <Frame Grid.Row="1" Margin="0,0,0,-40" BorderColor="Transparent" HasShadow="True"  CornerRadius="50" HeightRequest="700">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="20,50,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"  Text="Welcome Back!" FontSize="24" FontAttributes="Bold" TextColor="#1C375C" HorizontalOptions="CenterAndExpand"></Label>
+                    <Label Grid.Row="1" Margin="0,-15,0,0" Text="Login in to account" TextColor="#1C375C"  HorizontalOptions="CenterAndExpand"></Label>
+                    
+                    <Entry Grid.Row="2" x:Name="usr" Placeholder="Username" Margin="0,20,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    
+                    <Entry Grid.Row="3" x:Name="passtxt" Placeholder="Password" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Entry.Behaviors>
+                            <local:PasswordValidationBehavior />
+                        </Entry.Behaviors>
+                    </Entry>
+
+                    <Label Grid.Row="4"  HorizontalOptions="EndAndExpand">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span x:Name="forgotPasswordLabel" Text="Forgot Password?" TextColor="Blue" TextDecorations="Underline" ></Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Button Grid.Row="5" Text="Login" Clicked="Button_Clicked" BackgroundColor="#0277C8" CornerRadius="20"></Button>
+                    
+
+                    <Label Grid.Row="6"  HorizontalOptions="CenterAndExpand">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Don't have an account? " TextColor="Gray"></Span>
+                                <Span Text="Sign up here" TextColor="Blue" FontAttributes="Bold" TextDecorations="Underline"></Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Label.GestureRecognizers>
+
+                    </Label>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>      
+</ContentPage>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AuthenticationApp.View.ListView" Title="Course List">
+
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding courses}" ItemTapped="ListView_ItemTapped" BackgroundColor="Beige" SeparatorColor="DarkBlue" HasUnevenRows="True" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="20,10,0,10" Spacing="20">
+                            <Image Source="{Binding Image}"
+                                   WidthRequest="40"
+                                   HeightRequest="40"
+                                   VerticalOptions="Start"/>
+                            <Label Text="{Binding Name}"
+                                   FontSize="Small" TextColor="Black" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </ContentPage.Content>
+</ContentPage>

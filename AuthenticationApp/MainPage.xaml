@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AuthenticationApp.MainPage">
+
+    <CarouselView x:Name="myCollectionView"
+                     Margin="100">
+        <CarouselView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout>
+                    <Image  x:Name="selectedImage"  Margin="0,2,0,0" Aspect="Fill" WidthRequest="80" HeightRequest="80" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" TranslationX="5" TranslationY="10" />
+                    <Label Text="Register Details: " TextColor="DarkBlue" FontSize="Title" FontAttributes="Bold"/>
+                    <Label Text="{Binding  UserName, StringFormat='UserName:{0:F0}'}" FontSize="Title"/>
+                    <Label Text="{Binding FirstName, StringFormat='FirstName:{0:F0}'}"  FontSize="Title"/>
+                    <Label Text="{Binding LastName, StringFormat='LastName:{0:F0}'}"  FontSize="Title"/>
+                    <Label Text="{Binding Email, StringFormat='Email:{0:F0}'}"  FontSize="Title" />
+                    <Label Text="{Binding PhoneNumber, StringFormat='PhoneNumber:{0:F0}'}"  FontSize="Title"/>
+                    <Label Text="{Binding Password, StringFormat='Password:{0:F0}'}"  FontSize="Title"/>
+                    <Label Text="{Binding ConfirmPassword, StringFormat='ConfirmPassword:{0:F0}'}"  FontSize="Title"/>
+                    <Button Text="Logout" Clicked="Button_Clicked"></Button>
+                    <Button Text="Course" Clicked="Button_Clicked_1"></Button>
+
+                </StackLayout>
+            </DataTemplate>
+        </CarouselView.ItemTemplate>
+    </CarouselView>
+
+</ContentPage>

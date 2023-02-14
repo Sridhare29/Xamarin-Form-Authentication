@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AuthenticationApp.View.Uploadimage"
+                         xmlns:syncfusion="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.SfAvatarView.XForms" xmlns:syncfusion1="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.Core.XForms">
+
+    <StackLayout>
+        <syncfusion1:SfAvatarView ImageSource="{Binding ProfileImage}" WidthRequest="100" HeightRequest="100"  />
+        <Button Text="Pick Image" Command="{Binding PickCommand}"></Button>
+    </StackLayout>
+
+</ContentPage>
